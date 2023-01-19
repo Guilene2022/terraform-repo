@@ -28,5 +28,12 @@ pipeline {
                 sleep 4
             }
         }
+        stage('create a zip file') {
+            steps {
+                sh 'zip terraformrepo-${BUILD_NUMBER}.zip *  --exclude Jenkinsfile'
+                echo 'done'
+                sleep 4
+            }
+        }
     }
 }
